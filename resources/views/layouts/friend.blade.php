@@ -69,7 +69,7 @@
                     <a href="#"><i class="fa fa-linkedin"></i></a>
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <div style="display: flex">
-                        <form action="{{ route('message', ['id' => $user->id]) }}" method="POST">
+                        <form action="#" method="POST">
                             @csrf
                             <button type="submit" style="background-color: rgb(4, 243, 4)">Message</button>
                         </form>
@@ -91,7 +91,7 @@
                 <a href="#"><i class="fa fa-linkedin"></i></a>
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <div style="display: flex">
-                    <form action="{{ route('message', ['id' => $user->id]) }}" method="POST">
+                    <form action="#" method="POST">
                         @csrf
                         <button type="submit" style="background-color: rgb(4, 243, 4)">Message</button>
                     </form>

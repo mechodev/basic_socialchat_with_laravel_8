@@ -35,6 +35,13 @@ class FriendController extends Controller
         return redirect()->route('friend_liste');
     }
 
+    public function delete($id)
+    {
+        $user = User::find($id);
+
+        $user->delete();
+    }
+
     public function profile(){
         $user=User::find(auth()->user()->id);
         return view('layouts.profile', [
