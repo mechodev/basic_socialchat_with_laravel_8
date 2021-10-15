@@ -1,0 +1,35 @@
+.publication__item{
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top:15px;
+    background-color:#fff;
+    padding: 15px;
+    box-shadow: 0 9px 6px rgba(0, 0, 0, .15)
+}
+.publication__title{
+    text-transform: capitalize;
+    color:green;
+    font-size: 18px;
+    font-weight: 600;
+}
+.publication__desc{
+    font-size: 16px;
+    display: block;
+    margin-bottom: 15px;
+    line-height: 1.5rem;
+}
+.publication__addComment{
+    display: inline-block;
+    padding:5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size:15px;
+    letter-spacing: .2px;
+    border:1px solid green;
+    color:green;
+    transition:.3s;
+}
+.publication__addComment:hover{
+    background-color: green;
+    color:#fff;
+}
