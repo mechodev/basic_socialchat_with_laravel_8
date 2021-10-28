@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Forum;
 use App\Models\Messages;
 use App\Models\Commentaire;
 use App\Models\Publication;
@@ -35,6 +36,10 @@ class User extends Authenticatable
     public function messages()
     {
         return $this->hasMany(Messages::class);
+    }
+
+    public function forums(){
+        return $this->hasMany(Forum::class);
     }
 
 

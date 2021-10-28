@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Messages')
+@section('title', 'Forum')
 
 
 @section('style')
@@ -63,16 +63,32 @@
 
 @section('content')
 
-    <a href="{{ route('forum') }}">Forum de discussion privée</a>
-
-    @foreach ($allMessages as $message)
+    @foreach ($allDiscussions as $discussion)
         <div class="container">
-            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt="User"
-                style="width:auto; max-height:50px">
-            <p>{{ $message->contenu }}</p>
-            <span class="time-right">{{ date_format($message->created_at, 'd-m-Y H:i:s') }}</span>
-            <a class="publication__addComment" href="{{ route('details', ['id' => $message->id]) }}">Repondre</a>
+            <div class="publication__title">
+                <img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt="User"
+                    style="width:auto; max-height:50px">
+                <span>{{ $discussion->user->firstname }} {{ $discussion->user->lastname }}</span>
+            </div>
+            <p>{{ $discussion->contenu }}</p>
+            <span class="time-right">{{ date_format($discussion->created_at, 'd-m-Y H:i:s') }}</span>
         </div>
     @endforeach
+
+
+    <form method="POST" action="{{ route('forum') }}">
+        @csrf
+        <div style="width: 100%">
+            <div style="display: flex; flex-direction:column; width:100%">
+                <textarea name="contenu" id="" cols="5" rows="2"></textarea>
+            </div>
+            <div style="width: 100%">
+                <button style="width: 100%; display:flex; justify-content:center; margin:10px 0" type="submit">
+                    <strong>Ajoutez un message</strong>
+                </button>
+            </div>
+        </div>
+    </form>
+
 
 @endsection

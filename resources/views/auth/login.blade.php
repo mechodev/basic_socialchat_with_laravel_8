@@ -117,7 +117,7 @@
 
                     <div class="container" style="background-color:#f1f1f1">
                         <button type="button" class="cancelbtn">Cancel</button>
-                        <span class="psw">Forgot <a href="{{ route('password.request') }}">password?</a></span>
+                        <span class="psw">Not <a href="{{ route('register') }}">Register?</a></span>
                     </div>
                 </div>
             </form>

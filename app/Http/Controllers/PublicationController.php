@@ -32,7 +32,6 @@ class PublicationController extends Controller
         Publication::create([
             'contenu' => $request['contenu'],
             'user_id' => auth()->user()->id,
-            'publications_id' => $request->id
         ]);
 
         return redirect()->route('home');
@@ -41,10 +40,10 @@ class PublicationController extends Controller
     public function show($id)
     {
         $publication = Publication::find($id);
-        $commentaire=Commentaire::where('publications_id', '=', $id)->orderBy('created_at', "DESC")->get();
+        $commentaire = Commentaire::where('publications_id', '=', $id)->orderBy('created_at', "DESC")->get();
         return view('layouts.commentaire', [
             'publication' => $publication,
-            'commentaires'=>$commentaire
-    ]);
+            'commentaires' => $commentaire
+        ]);
     }
 }

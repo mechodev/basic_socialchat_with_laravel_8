@@ -84,8 +84,10 @@
 
             <div class="navbar">
                 <a class="active tablink" href="{{ route('home') }}"><i class="fa fa-fw fa-home"></i> Home</a>
-                <a class="tablink" href="{{ route('friend_liste')}}"><i class="fa fa-fw fa-users"></i> Friends</a>
-                <a class="tablink" href="{{ route('messages', ['id'=>auth()->user()->id]) }}"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+                <a class="tablink" href="{{ route('friend_liste') }}"><i class="fa fa-fw fa-users"></i>
+                    Friends</a>
+                <a class="tablink" href="{{ route('messages', ['id' => auth()->user()->id]) }}"><i
+                        class="fa fa-fw fa-envelope"></i> Messages</a>
                 <a class="tablink" href="{{ route('profile') }}"><i class="fa fa-fw fa-user"></i> Profile</a>
             </div>
         </header>
@@ -95,38 +97,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('js/index.js') }}"></script>
 </body>
-<style>
-    var btnContainer=document.getElementByClassName("navbar");
-
-
-
-    var btns=btnContainer.getElementsByClassName("tablink");
-
-    // Loop through the buttons and add the active class to the current/clicked button
-    for (var i=0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-                var current=document.getElementsByClassName("active");
-                current[0].className=current[0].className.replace(" active", "");
-                this.className +=" active";
-            }
-
-        );
-    }
-
-    for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-
-
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
-    }
-
-    this.className += " active";
-  });
-}
-
-</style>
-
 </html>

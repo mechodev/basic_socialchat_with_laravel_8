@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\CommentaireController;
@@ -31,6 +32,10 @@ Route::get('/messages/{id}', [MessageController::class, 'details'])->name('detai
 Route::get('/home', [PublicationController::class, 'index'])->name('home')->middleware('auth');
 
 Route::post('/home', [PublicationController::class, 'store'])->name('home');
+
+Route::get('/forum', [ForumController::class, 'index'])->name('forum')->middleware('auth');
+
+Route::post('/forum', [ForumController::class, 'store'])->name('forum');
 
 Route::post('/commentaire/{id}', [CommentaireController::class, 'store'])->name('commentaire');
 
